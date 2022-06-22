@@ -10,12 +10,46 @@ body{
 }
 h1{
     color: #EC994B;
-    font-size: 50px;
+    font-size: 60px;
     font-family: 'Fascinate', cursive;
 }
 section{
     text-align: center;
     margin: 0 auto;
+}
+form{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.playBtn{
+    padding: 10px;
+    margin: 10px;
+    background-color: #d8c5b4;
+    color: black;
+    font-size: 20px;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+select{
+    padding: 10px;
+    margin: 10px;
+    background-color: #EC994B;
+    color: #F1EEE9;
+    font-size: 20px;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p{
+    color:#F1EEE9 ;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.yourName{
+    margin-left: 10px;
 }
 
 .tictactoe{
@@ -33,4 +67,13 @@ section{
     font-size: 100px;
     text-align: center;
     font-family: 'Fascinate', cursive;
+}
+.btn{
+    padding: 10px;
+    margin: 10px;
+    background-color: #EC994B;
+    color: #F1EEE9;
+    font-size: 25px;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
 }
