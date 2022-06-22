@@ -1,0 +1,36 @@
+body{
+    background-color: #15133C;
+    margin: 0px;
+    padding: 0px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+h1{
+    color: #EC994B;
+    font-size: 50px;
+    font-family: 'Fascinate', cursive;
+}
+section{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.tictactoe{
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+.block{
+    width: 140px;
+    height: 140px;
+    background-color: #73777B;
+    border: 2px solid #F1EEE9;
+    float: left;
+    font-size: 100px;
+    text-align: center;
+    font-family: 'Fascinate', cursive;
+}
