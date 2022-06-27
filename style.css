@@ -1,5 +1,5 @@
 body{
-    background-color: #15133C;
+    background-color: #2C3639;
     margin: 0px;
     padding: 0px;
 }
@@ -9,8 +9,10 @@ body{
     justify-content: center;
 }
 h1{
-    color: #EC994B;
-    font-size: 60px;
+    background: linear-gradient( 103.3deg,  rgba(252,225,208,1) 30%, rgba(255,173,214,1) 55.7%, rgba(162,186,245,1) 81.8% );
+    -webkit-text-fill-color:transparent;
+    -webkit-background-clip: text;
+    font-size: 80px;
     font-family: 'Fascinate', cursive;
 }
 section{
@@ -20,36 +22,15 @@ section{
 form{
     display: flex;
     justify-content: center;
-    margin: 20px;
-}
-.playBtn{
-    padding: 10px;
     margin: 10px;
-    background-color: #d8c5b4;
-    color: black;
+}
+input{
+    padding: 8px;
+    margin: 10px;
     font-size: 20px;
     border-radius: 15px;
+    background-color: #FFF9D7;
     font-family: 'Montserrat', sans-serif;
-}
-
-select{
-    padding: 10px;
-    margin: 10px;
-    background-color: #EC994B;
-    color: #F1EEE9;
-    font-size: 20px;
-    border-radius: 15px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-p{
-    color:#F1EEE9 ;
-    font-size: 25px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.yourName{
-    margin-left: 10px;
 }
 
 .tictactoe{
@@ -61,19 +42,50 @@ p{
 .block{
     width: 140px;
     height: 140px;
-    background-color: #73777B;
-    border: 2px solid #F1EEE9;
+    background-color: #3F4E4F;
+    border: 2px solid #DCD7C9;
+    box-shadow: 10px 10px 10px bisque;
     float: left;
     font-size: 100px;
     text-align: center;
     font-family: 'Fascinate', cursive;
 }
+.block:hover{
+    background-image: linear-gradient( 92.7deg,  rgba(245,212,212,1) 8.5%, rgba(252,251,224,1) 90.2% );
+}
 .btn{
     padding: 10px;
     margin: 10px;
-    background-color: #EC994B;
-    color: #F1EEE9;
-    font-size: 25px;
+    background-image: linear-gradient( 103.3deg,  rgba(252,225,208,1) 30%, rgba(255,173,214,1) 55.7%, rgba(162,186,245,1) 81.8% );
+    font-size: 30px;
     border-radius: 15px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Fascinate', cursive;
+}
+.container{
+    display: flex;
+    justify-content: center;
+
+}
+p{
+    padding: 8px;
+    font-size: 50px;
+    border-radius: 15px;
+    color: #FFF9D7;
+    font-family: 'Fascinate', cursive;
+}
+.player1{
+    margin-right: 50px;
+    padding: 8px;
+    font-size: 50px;
+    border-radius: 15px;
+    color: #FFF9D7;
+    font-family: 'Fascinate', cursive;
+}
+.player2{
+    margin-left: 50px;
+    padding: 8px;
+    font-size: 50px;
+    border-radius: 15px;
+    color: #FFF9D7;
+    font-family: 'Fascinate', cursive;
 }

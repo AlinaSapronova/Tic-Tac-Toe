@@ -1,36 +1,93 @@
 const area = document.querySelector('.tictactoe');
 const btn = document.querySelector('.btn');
-const playBtn = document.querySelector('.playBtn');
+const firstPlayer = document.querySelector('.firstPlayer')
+const player1 = document.querySelector('.player1')
+const secondPlayer = document.querySelector('.secondPlayer')
+const player2 = document.querySelector('.player2')
 let start = 0;
+let board = [
+        [null, null, null],
+        [null, null, null],
+        [null, null, null],
+      ]
 
-playBtn.addEventListener('click', choose);
-function choose(e) {
-    e.preventDefault();
-    
 
+
+
+///////////////////////////////////////////////////////first player
+firstPlayer.addEventListener('keypress', (e) => {
+if(e.key === 'Enter') {
+player1.innerHTML = firstPlayer.value;
 }
+})
 
 
+/////////second player
+secondPlayer.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter') {
+    player2.innerHTML = secondPlayer.value;
+    }
+    })
 
 
+///////////////////////////////////////////////////////////
 
 
-area.addEventListener('click', startMove)
+area.addEventListener('click', startMove);
 function startMove(e) {
+    if(e.target.innerHTML) return;
     if(e.target.className = 'block') {
         //console.log(e.target)
-        start % 2 === 0 ? e.target.innerHTML = 'X' : e.target.innerHTML = '0';
+        start % 2 === 0 ? e.target.innerHTML = 'X' : e.target.innerHTML = 'O';
         start ++;
-        checking()
-         
+        checking();
     }
 }
+////////////////////////////////////////////////////
+///row
+function getRow(board, row) {
+    let arr = [];
+    let currentRow = board[row];
+    for (let i = 0; i < currentRow.length; i++) {
+      let play = currentRow[i];
+      arr.push(play);
+    }
+    return arr;
+  }
+  
+  //column
+  function getColumn(board, col) {
+    let arr = [];
+    for (let i = 0; i < board.length; i++) {
+      let play = board[i][col];
+      arr.push(play);
+    }
+    return arr;
+  }
+  
+  //diagonal
+  function getDiagonal(board, diagonal) {
+    let arr = [];
+    if (!diagonal) {
+      for (let i = 0; i < board.length; i++) {
+        let play = board[i][i];
+        arr.push(play);
+      }
+    } else {
+      for (let i = 2, j = 0; i > -1; i--, j++) {
+        let play = board[i][j];
+        arr.push(play);
+      }
+    }
+    return arr;
+  }
+  ////////////////////////
 
 
 function checking() {
-    const blocks = document.getElementsByClassName('block');
+    const ceil = document.getElementsByClassName('block');
     //console.log(blocks);
-    const arrays = [
+    const newArray = [
         [0,1,2],//row
         [3,4,5],
         [6,7,8],
@@ -40,48 +97,47 @@ function checking() {
         [0,4,8],//diagonal
         [2,4,6]
     ];
-    for(let i = 0; i < arrays.length; i++) {
-        if(blocks[arrays[i][0]].innerHTML == 'X' && blocks[arrays[i][1]].innerHTML == 'X' && blocks[arrays[i][2]].innerHTML == 'X') {
-           return alert('You WINER!!!')
-        } 
-        else if(blocks[arrays[i][0]].innerHTML == '0' && blocks[arrays[i][1]].innerHTML == '0' && blocks[arrays[i][2]].innerHTML == '0') {
-           return alert('You WINER!!!')
+    for(let i = 0; i < newArray.length; i++) {
+        if(ceil[newArray[i][0]].innerHTML == 'X' && ceil[newArray[i][1]].innerHTML == 'X' && ceil[newArray[i][2]].innerHTML == 'X')
+         {
+           return  Swal.fire({
+            title: 'Player "X" is WINNER!!!',
+            imageUrl: 'https://img.freepik.com/free-photo/colorful-fireworks-celebration-night-sky-background_36049-316.jpg?size=626&ext=jpg&uid=R72096366&ga=GA1.2.859751383.1653581502',
+            imageWidth: 500,
+            imageHeight: 300,
+          })
+
+        }  
+        else if(ceil[newArray[i][0]].innerHTML == 'O' && ceil[newArray[i][1]].innerHTML == 'O' && ceil[newArray[i][2]].innerHTML == 'O') {
+           return Swal.fire({
+            title: 'Player "O" is WINNER!!!',
+            imageUrl: 'https://img.freepik.com/free-photo/colorful-fireworks-celebration-night-sky-background_36049-316.jpg?size=626&ext=jpg&uid=R72096366&ga=GA1.2.859751383.1653581502',
+            imageWidth: 500,
+            imageHeight: 300,
+          })
+           
         }
-        else if(start > 7) {
-          return  alert('DRAW');
-        }
-    }
+
+        else if(start > 8) {
+          return Swal.fire({
+            title: 'D-R-A-W!!!!!!!',
+            imageUrl: '  https://img.freepik.com/free-photo/friends-greetings-sign-disagreement-two-male-hands-competion-arm-wrestling-isolated-blue-studio-background-concept-standoff-support-friendship-business-community-strained-relations_155003-36361.jpg?size=626&ext=jpg&uid=R72096366&ga=GA1.2.859751383.1653581502',
+            imageWidth: 500,
+            imageHeight: 300,
+          })
+        }         
+    } 
 }
-
-
-
-
-//function with random number (0,8)
-
-function randomName() {
-let number = Math.floor(Math.random() * 8)
-return number
-//console.log(number)
-}
-randomName()
-
-function currentEmpty() {
-    
-}
-
-
-
-// need another f to check if the cell current empty
-//if it empty then computer have to mark this
-//if it not emty the run random number again
-
-
-
-
-
-
 
 
 btn.addEventListener('click', () => {
-    location.reload();
-})
+   location.reload();
+    })
+
+
+
+
+
+
+
+
